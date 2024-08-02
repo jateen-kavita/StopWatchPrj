@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>StopWatch Project</title>
+    <link rel="icon" href="stopwatch.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="theme-toggler">
+        <div class="theme-bg lightMode darkMode">
+          <i class="fa-solid fa-sun" id="lighttheme"></i>
+          <div class="slider lightMode darkMode"></div>
+          <i class="fa-solid fa-moon" id="darktheme"></i>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="stopwatch-wrapper">
+        <div class="stopwatch-container lightMode darkMode">
+          <div class="hour-container"></div>
+          <div class="minute-container"></div>
+          <div class="second-container"></div>
+        </div>
+        <div class="buttons-container">
+          <button class="start-btn darkMode lightMode">आरंभ</button>
+          <button class="pause-btn darkMode lightMode">स्थगित</button>
+          <button class="reset-btn darkMode lightMode">अंत:</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>Designed with <span class="heart">❤️</span> by Jateen Kavita</p>
+      </div>
+    </footer>
+
+    <script src="Index.js"></script>
+  </body>
+</html>

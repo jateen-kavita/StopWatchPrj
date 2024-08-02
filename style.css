@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("StopWatchBG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.stopwatch-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.stopwatch-container {
+  height: 23rem;
+  width: 46rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Stopwatch Styling */
+.stopwatch-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 6rem;
+}
+.second-container,.minute-container,.hour-container {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+/* Buttons Container */
+
+.buttons-container{
+  display: flex;
+  justify-content: space-evenly;
+  width: 46rem;
+}
+.buttons-container button {
+  padding: 1rem 3.5rem;
+  border-radius: 25px;
+  border: none;
+  font-family: "Tiro Devanagari Marathi", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
+button:hover{
+  transform: scale(1.08);
+}
+
+/* Theme Changer LightMode & DarkMode */
+
+.darkMode {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  color: aliceblue;
+  transition: 2s;
+}
+
+.darkMode:hover{
+  background-color: rgba(35, 48, 73, 0.75);
+  color: blanchedalmond;
+}
+
+.lightMode {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(21, 18, 18, 0.125);
+  color: rgb(36, 36, 36);
+  transition: 2s;
+}
+.lightMode:hover{
+  background-color: rgba(158, 158, 158, 0.848);
+}
+
+/* Toggle Theme Btn  */
+
+.theme-toggler {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5rem;
+  margin-top: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.theme-bg {
+  height: 30px;
+  background-color: grey;
+  width: 60px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 2px 2px;
+  transition: 2s all;
+}
+
+.slider {
+  margin: auto 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  transition: 1s all;
+  position: absolute;
+}
+
+#lighttheme {
+  margin-left: 8px;
+  color: yellow;
+}
+#darktheme {
+  margin-right: 8px;
+  color: whitesmoke;
+}
+
+
+
+
+/* Footer Styling */
+.footer-content{
+  background-color: rgba(67, 67, 67, 0.832);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0%);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.footer-content p{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: rgb(230, 230, 230);
+  text-align: center;
+}
+/* Heart footer Animation */
+.heart{
+  animation: heart 1s infinite 0s alternate;
+  cursor: pointer;
+}
+@keyframes heart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsiveness for tablet and phone screen sizes */
+/* ipad */
+@media  screen and (max-width: 768px)  {
+  .stopwatch-container{
+    width: 40rem;
+    height: 20rem;
+    overflow-x: hidden;
+  }
+  .theme-toggler{
+    justify-content: center;
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%,-50%);
+  }
+}
+/* iphone */
+@media  screen and (max-width: 430px) {
+  .stopwatch-container{
+    width: 22rem;
+    height: 15rem;
+  }
+  .theme-toggler{
+    /* justify-content: center; */
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%,-50%);
+  }
+  .buttons-container{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 12rem;
+    gap: 15px;
+  }
+}
