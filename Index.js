@@ -1,16 +1,20 @@
+// Calling and assigning required variables for DOM dynamic requirement
 const hours = document.querySelector(".hour-container");
 const minutes = document.querySelector(".minute-container");
 const second = document.querySelector(".second-container");
 const startbtn = document.querySelector(".start-btn");
 const pausebtn = document.querySelector(".pause-btn");
 const resetbtn = document.querySelector(".reset-btn");
+const slider = document.querySelector(".slider");
+const togglebtn = document.querySelector(".theme-bg");
 
 
 // Toggle theme
-let slider = document.querySelector(".slider");
-let togglebtn = document.querySelector(".theme-bg");
+
 let darkMode = "darkMode";
 let lightMode = "lightMode";
+
+// Toggle Theme logic goes here
 
 const slide = (switchbtn) => {
   switchbtn.addEventListener("click", () => {
@@ -23,7 +27,7 @@ const slide = (switchbtn) => {
     }
     document.querySelectorAll('.lightMode, .darkMode').forEach(theme => {
       if (theme.classList.contains(lightMode)) {
-        theme.classList.remove(lightMode);
+        theme.classList.remove(lightMode);   
         theme.classList.add(darkMode);
       } else {
         theme.classList.remove(darkMode);
@@ -54,6 +58,8 @@ const stopwatch = () => {
   minutes.textContent = min;
   hours.textContent = hrs;
 };
+
+// impletementing logic & making buttons work dynamically
 
 const start = (startTime) => {
   startTime.addEventListener("click", () => {
